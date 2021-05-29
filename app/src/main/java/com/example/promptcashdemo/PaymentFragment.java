@@ -25,7 +25,7 @@ import java.util.TimerTask;
 
 public class PaymentFragment extends Fragment {
 
-    final String PROMPT_API = "http://prompt-cash.trax.local:2929/demo?amount=0.01";
+    final String PROMPT_API = "https://prompt.cash/demo?amount=0.01";
 
     private FragmentSecondBinding binding;
 
