@@ -4,7 +4,7 @@ Demonstration of prompt.cash integration into an simple android app.
 ## WebView integration
 This demo consists of 3 simple view fragments:
 
-1. [WelcomeFragment](app/src/main/java/com/example/promptcashdemo/WelcomeFragment.java):Ask the user for an amount to pay
+1. [WelcomeFragment](app/src/main/java/com/example/promptcashdemo/WelcomeFragment.java): Ask the user for an amount to pay
 using an input element.
 
 2. [PaymentFragment](app/src/main/java/com/example/promptcashdemo/PaymentFragment.java): Opens the [Prompt.Cash](https://prompt.cash/)
@@ -23,3 +23,5 @@ There is an APK to run this demo on your android phone available in the [Release
 [Website](https://prompt.cash/)
 
 [Twitter](https://twitter.com/CashPrompt)
+
+[Telegram](https://t.me/PromptCash)
