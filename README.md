@@ -1,6 +1,8 @@
 # androidDemo
 Demonstration of prompt.cash integration into an simple android app.
 
+![](docs/demo.png)
+
 ## WebView integration
 This demo consists of 3 simple view fragments:
 
