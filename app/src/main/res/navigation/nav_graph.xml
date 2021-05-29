@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.example.promptcashdemo.FirstFragment"
+        android:name="com.example.promptcashdemo.WelcomeFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.example.promptcashdemo.SecondFragment"
+        android:name="com.example.promptcashdemo.PaymentFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
 
@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/ThirdFragment"
-        android:name="com.example.promptcashdemo.ThirdFragment"
+        android:name="com.example.promptcashdemo.CompletedFragment"
         android:label="fragment_third"
         tools:layout="@layout/fragment_third" />
 </navigation>

@@ -8,9 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class ThirdFragment extends Fragment {
+public class CompletedFragment extends Fragment {
 
-    public ThirdFragment() {
+    public CompletedFragment() {
         // Required empty public constructor
     }
 

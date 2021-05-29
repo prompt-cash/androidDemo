@@ -1,8 +1,6 @@
 package com.example.promptcashdemo;
 
 import android.annotation.TargetApi;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -25,7 +23,8 @@ import com.example.promptcashdemo.databinding.FragmentSecondBinding;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class SecondFragment extends Fragment {
+public class PaymentFragment extends Fragment {
+
     final String PROMPT_API = "http://prompt-cash.trax.local:2929/demo?amount=0.01";
 
     private FragmentSecondBinding binding;
@@ -49,19 +48,21 @@ public class SecondFragment extends Fragment {
         binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(SecondFragment.this)
+                NavHostFragment.findNavController(PaymentFragment.this)
                         .navigate(R.id.action_SecondFragment_to_FirstFragment);
             }
         });
 
+        // set up web view for javascript execution
         binding.webView.getSettings().setJavaScriptEnabled(true);
+        // ensure we will stay on the page and dont open a exernal browser
         binding.webView.setWebViewClient(new MyWebViewClient());
+        // and load the payment page
         binding.webView.loadUrl(this.PROMPT_API);
 
+        // set up a timer to check every second if the payment was successfull
         FragmentActivity activity = getActivity();
-
-        SecondFragment This = this;
-
+        PaymentFragment This = this;
         mTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
@@ -79,6 +80,10 @@ public class SecondFragment extends Fragment {
     public void CheckPayment(){
         FragmentActivity activity = getActivity();
 
+        //
+        // We are checkign if the payment was successfull by executing some javascript and checking the returned value
+        //
+
         String javascript = "promptCfg.payment.status";
         binding.webView.evaluateJavascript(javascript, new ValueCallback<String>() {
             @TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -87,7 +92,7 @@ public class SecondFragment extends Fragment {
                 if(s.equals("\"PAID\"")){
                     Toast.makeText(activity.getApplicationContext(), "Payed Successfully", Toast.LENGTH_SHORT).show();
 
-                    NavHostFragment.findNavController(SecondFragment.this)
+                    NavHostFragment.findNavController(PaymentFragment.this)
                             .navigate(R.id.action_SecondFragment_to_thirdFragment);
 
                     mTimer.cancel();
