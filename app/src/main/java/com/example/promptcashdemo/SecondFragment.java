@@ -26,6 +26,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class SecondFragment extends Fragment {
+    final String PROMPT_API = "http://prompt-cash.trax.local:2929/demo?amount=0.01";
 
     private FragmentSecondBinding binding;
 
@@ -55,7 +56,7 @@ public class SecondFragment extends Fragment {
 
         binding.webView.getSettings().setJavaScriptEnabled(true);
         binding.webView.setWebViewClient(new MyWebViewClient());
-        binding.webView.loadUrl("http://prompt-cash.trax.local:2929/demo?amount=0.01");
+        binding.webView.loadUrl(this.PROMPT_API);
 
         FragmentActivity activity = getActivity();
 
