@@ -25,7 +25,9 @@ import java.util.TimerTask;
 
 public class PaymentFragment extends Fragment {
 
-    final String PROMPT_API = "https://prompt.cash/demo?amount=0.01";
+    final String PROMPT_API = "https://prompt.cash/demo?amount=";
+
+    public static double mAmount = 0.01;
 
     private FragmentSecondBinding binding;
 
@@ -58,7 +60,7 @@ public class PaymentFragment extends Fragment {
         // ensure we will stay on the page and dont open a exernal browser
         binding.webView.setWebViewClient(new MyWebViewClient());
         // and load the payment page
-        binding.webView.loadUrl(this.PROMPT_API);
+        binding.webView.loadUrl(this.PROMPT_API + mAmount);
 
         // set up a timer to check every second if the payment was successfull
         FragmentActivity activity = getActivity();

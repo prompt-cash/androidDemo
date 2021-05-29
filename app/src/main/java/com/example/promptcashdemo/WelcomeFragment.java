@@ -29,9 +29,15 @@ public class WelcomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        android.widget.EditText num = binding.numAmount;
+        num.setText("0.01");
+
         binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                PaymentFragment.mAmount = Double.parseDouble(num.getText().toString());
+
                 NavHostFragment.findNavController(WelcomeFragment.this)
                         .navigate(R.id.action_FirstFragment_to_SecondFragment);
             }
