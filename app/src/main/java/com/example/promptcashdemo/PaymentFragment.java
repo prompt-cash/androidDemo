@@ -25,7 +25,14 @@ import java.util.TimerTask;
 
 public class PaymentFragment extends Fragment {
 
+    // demo payment URL that always generates a new payment on every call
     final String PROMPT_API = "https://prompt.cash/demo?amount=";
+
+    // to receive payments into your account, please use
+    // TOKEN: your Public Token from: https://prompt.cash/account
+    // TX_ID: a unique ID for every payment you chose (order ID,...)
+    // API reference for all parameters: https://prompt.cash/pub/docs/#create-a-new-payment
+    //final String PROMPT_API = "https://prompt.cash/pay-frame?token=TOKEN&tx_id=TX_ID&amount=0.01&currency=THB&desc=Demo%20Payment";
 
     public static double mAmount = 0.01;
 
