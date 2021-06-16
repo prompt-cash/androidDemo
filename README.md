@@ -22,8 +22,7 @@ There is an APK to run this demo on your android phone available in the [Release
 
 
 ## Contact
-[Website](https://prompt.cash/)
-
-[Twitter](https://twitter.com/CashPrompt)
-
-[Telegram](https://t.me/PromptCash)
+[Website](https://prompt.cash/) -
+[Twitter](https://twitter.com/CashPrompt) -
+[Telegram](https://t.me/PromptCash) -
+[YouTube](https://www.youtube.com/channel/UClfNVdL3T0RF6pF1yGi9teg)
